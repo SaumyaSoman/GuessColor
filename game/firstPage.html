@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="x-ua-compatible" content="IE=edge" />
+	<title>Game</title>
+	<link rel="stylesheet" href="main.css"/>
+	<noscript>Your browser does not support JavaScript! Please enable it.</noscript>
+</head>
+<body>
+	<div id="big_wrapper">
+		<header id="top_header"><h1>Guess the Color!</h1> <div id="animation" align="center"></div></header>
+		<div id="new_div">
+			<section id="main_section">
+				<article>
+					<header>
+						<h2>How to play?</h2>
+					</header>
+					<p id="instruction" style="line-height: 200%;"><b>The game has 20 rounds. In each round, the computer will choose a color, either <FONT COLOR="#FF0000">Red</FONT> or <FONT COLOR="##0000FF">Blue</FONT>. 
+For each round you guess the color that computer has chosen (either red or blue) by clicking on the same color circle. 
+After you click on a circle, you will be told whether your guess is right or wrong.
+For each right guess, you get <FONT size="5">$1</FONT> coin.
+At the end of 20 rounds, the total number of coins you earned is reported.
+If you want to play again,you can reload the game. 
+You can also quit the game between rounds.
+
+<br>Some things to note,
+<br></b>
+
+</p>
+<div id="img">
+	<img id="fcoin" src = "coin.jpg" />
+	<p id="fcoins">: Number of coins</p>
+	<br>
+	<img id="flife" src = "life.png" />
+	<p id="fcount">: Number of rounds left</p>
+	<br>
+	<img id="fplayed" src = "played.jpg" />
+	<p id="flivesPlayed">: Number of rounds played</p>
+</div>
+<p id="instruction" style="line-height: 200%;"><b>
+Press the 'Play' button below to start the game. Have fun!!
+</b></p>
+<br>
+					<footer align="center">
+						<h4 style="color:red;">P.S. Red has 80% chance of winning</h4>
+					</footer>
+				</article> 
+<br>
+	<div id="buttons" align="center">
+		<input id="quit" type="button" value="Play!" onclick="location.href='game.html'">
+	</div>
+
+</section>
+	</div>
+<footer id="footer">
+Copyright Rutgers University 2014</footer>
+</div>
+</body>
+</html>

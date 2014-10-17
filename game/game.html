@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="x-ua-compatible" content="IE=edge" />
+	<title>Game</title>
+	<link rel="stylesheet" href="main.css"/>
+	<script type="text/javascript">
+		var noOftimes=19; var right=0,wrong=0;
+function quit()
+  {
+	if(document.getElementById('quit').value=='Give Up'){		
+		if (confirm("Do you want to quit?") == true) {
+        location.reload();
+		}	
+	}else{
+		if (confirm("Do you want to reload?") == true) {
+        location.reload();
+		}else{
+		location.replace("conclusion.html");
+		}
+	} 
+  }
+function color(a)
+	{
+	var i=Math.random(); var compColor;
+	if(i<=0.8){
+		compColor="red";
+	}else{
+		compColor="blue";
+	}
+	
+	document.getElementById("count");
+	if(noOftimes>=0){
+	document.getElementById("count").innerHTML=noOftimes;
+	document.getElementById("livesPlayed").innerHTML=20-noOftimes;
+	document.getElementById('quit').style.visibility="visible";
+	noOftimes--;
+		if(a==compColor)
+	{
+	right++;
+	document.getElementById("coins").style.fontSize="20px"
+	document.getElementById("coins").innerHTML=right;
+	document.getElementById("output").innerHTML="Good Job! Right Guess!";
+	}else{
+	document.getElementById("output").innerHTML="Sorry! Wrong Guess!";
+	wrong++;
+	}
+	
+	}else{		
+	document.getElementById("final").style.fontSize="xx-large"
+	hide();
+	document.getElementById("final").innerHTML="Game over! You earned $"+right+".";
+	}	
+	}
+	function hide()
+	{
+	document.getElementById("div").className = "";
+	document.getElementById('quit').value="Reload";
+	}
+	</script>
+	<noscript>Your browser does not support JavaScript! Please enable it.</noscript>
+</head>
+<body>
+	<div id="big_wrapper">
+		<header id="top_header"><h1>Guess the Color!</h1> <div id="animation" align="center"></div></header>
+		<div id="new_div">
+			<section id="main_section">				
+<div id="div" class="nojQuery" align="center">
+<svg height="200" width="1000">
+  <circle id="redCircle" cx="350" cy="100" r="80" stroke="black" stroke-width="2" fill="red" onclick="color('red')" />
+  <circle id="blueCircle" cx="550" cy="100" r="80" stroke="black" stroke-width="2" fill="blue" onclick="color('blue')"/>
+</svg> 
+<br>
+<br>
+<p id="output"></p>
+<br>
+<div id="coinImg">
+	<img id="coin" src = "coin.jpg" />
+	<p id="coins">0</p>
+	<img id="life" src = "life.png" />
+	<p id="count">20</p>
+	<img id="played" src = "played.jpg" />
+	<p id="livesPlayed">0</p>
+</div>
+<br>
+<p id="final"></p>
+	<div id="buttons">
+		<input id="quit" type="button" style="visibility:hidden" value="Give Up" onclick="quit()">
+	</div>
+</div>
+</section>
+	</div>
+<footer id="footer">
+Copyright Rutgers University 2014</footer>
+</div>
+</body>
+</html>
